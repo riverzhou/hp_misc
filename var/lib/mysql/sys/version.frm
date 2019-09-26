@@ -1,0 +1,15 @@
+TYPE=VIEW
+query=select \'1.0.0\' AS `sys_version`,version() AS `mysql_version`
+md5=e7665f16e3d122cfec5c593a4f345459
+updatable=0
+algorithm=0
+definer_user=root
+definer_host=%
+suid=2
+with_check_option=0
+timestamp=2014-06-22 00:20:00
+create-version=1
+source=SELECT \'1.0.0\' AS sys_version, version() AS mysql_version
+client_cs_name=utf8
+connection_cl_name=utf8_general_ci
+view_body_utf8=select \'1.0.0\' AS `sys_version`,version() AS `mysql_version`

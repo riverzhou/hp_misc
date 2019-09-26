@@ -1,0 +1,15 @@
+TYPE=VIEW
+query=select `x$user_summary_by_statement_type`.`user` AS `user`,sum(`x$user_summary_by_statement_type`.`total`) AS `total`,sum(`x$user_summary_by_statement_type`.`total_latency`) AS `total_latency`,sum(`x$user_summary_by_statement_type`.`max_latency`) AS `max_latency`,sum(`x$user_summary_by_statement_type`.`lock_latency`) AS `lock_latency`,sum(`x$user_summary_by_statement_type`.`rows_sent`) AS `rows_sent`,sum(`x$user_summary_by_statement_type`.`rows_examined`) AS `rows_examined`,sum(`x$user_summary_by_statement_type`.`rows_affected`) AS `rows_affected`,sum(`x$user_summary_by_statement_type`.`full_scans`) AS `full_scans` from `sys`.`x$user_summary_by_statement_type` group by `x$user_summary_by_statement_type`.`user` order by sum(`x$user_summary_by_statement_type`.`total_latency`) desc
+md5=c208fcd28f9543290f76cb68601bff48
+updatable=0
+algorithm=1
+definer_user=root
+definer_host=localhost
+suid=0
+with_check_option=0
+timestamp=2014-06-22 00:20:00
+create-version=1
+source=SELECT user,\n       SUM(total) AS total,\n       SUM(total_latency) AS total_latency,\n       SUM(max_latency) AS max_latency,\n       SUM(lock_latency) AS lock_latency,\n       SUM(rows_sent) AS rows_sent,\n       SUM(rows_examined) AS rows_examined,\n       SUM(rows_affected) AS rows_affected,\n       SUM(full_scans) AS full_scans\n  FROM sys.x$user_summary_by_statement_type\n GROUP BY user\n ORDER BY SUM(total_latency) DESC
+client_cs_name=utf8
+connection_cl_name=utf8_general_ci
+view_body_utf8=select `x$user_summary_by_statement_type`.`user` AS `user`,sum(`x$user_summary_by_statement_type`.`total`) AS `total`,sum(`x$user_summary_by_statement_type`.`total_latency`) AS `total_latency`,sum(`x$user_summary_by_statement_type`.`max_latency`) AS `max_latency`,sum(`x$user_summary_by_statement_type`.`lock_latency`) AS `lock_latency`,sum(`x$user_summary_by_statement_type`.`rows_sent`) AS `rows_sent`,sum(`x$user_summary_by_statement_type`.`rows_examined`) AS `rows_examined`,sum(`x$user_summary_by_statement_type`.`rows_affected`) AS `rows_affected`,sum(`x$user_summary_by_statement_type`.`full_scans`) AS `full_scans` from `sys`.`x$user_summary_by_statement_type` group by `x$user_summary_by_statement_type`.`user` order by sum(`x$user_summary_by_statement_type`.`total_latency`) desc

@@ -1,0 +1,5 @@
+filetype plugin indent on
+set smartindent
+colorscheme desert
+set pastetoggle=<F12>
+set fencs=utf8,gb18030,cp936 

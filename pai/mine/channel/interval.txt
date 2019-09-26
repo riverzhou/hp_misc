@@ -1,0 +1,4 @@
+bj : interval_channel    = 0.5
+qd : interval_channel    = 1
+sz : interval_channel    = 2
+

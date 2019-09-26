@@ -1,0 +1,15 @@
+TYPE=VIEW
+query=select `performance_schema`.`table_io_waits_summary_by_index_usage`.`OBJECT_SCHEMA` AS `object_schema`,`performance_schema`.`table_io_waits_summary_by_index_usage`.`OBJECT_NAME` AS `object_name`,`performance_schema`.`table_io_waits_summary_by_index_usage`.`COUNT_READ` AS `rows_full_scanned` from `performance_schema`.`table_io_waits_summary_by_index_usage` where (isnull(`performance_schema`.`table_io_waits_summary_by_index_usage`.`INDEX_NAME`) and (`performance_schema`.`table_io_waits_summary_by_index_usage`.`COUNT_READ` > 0)) order by `performance_schema`.`table_io_waits_summary_by_index_usage`.`COUNT_READ` desc
+md5=5f8dc2cd37f90f5f7eff95229ec60bd7
+updatable=1
+algorithm=2
+definer_user=root
+definer_host=localhost
+suid=0
+with_check_option=0
+timestamp=2014-06-22 00:20:00
+create-version=1
+source=SELECT object_schema, \n       object_name,\n       count_read AS rows_full_scanned\n  FROM performance_schema.table_io_waits_summary_by_index_usage \n WHERE index_name IS NULL\n   AND count_read > 0\n ORDER BY count_read DESC
+client_cs_name=utf8
+connection_cl_name=utf8_general_ci
+view_body_utf8=select `performance_schema`.`table_io_waits_summary_by_index_usage`.`OBJECT_SCHEMA` AS `object_schema`,`performance_schema`.`table_io_waits_summary_by_index_usage`.`OBJECT_NAME` AS `object_name`,`performance_schema`.`table_io_waits_summary_by_index_usage`.`COUNT_READ` AS `rows_full_scanned` from `performance_schema`.`table_io_waits_summary_by_index_usage` where (isnull(`performance_schema`.`table_io_waits_summary_by_index_usage`.`INDEX_NAME`) and (`performance_schema`.`table_io_waits_summary_by_index_usage`.`COUNT_READ` > 0)) order by `performance_schema`.`table_io_waits_summary_by_index_usage`.`COUNT_READ` desc

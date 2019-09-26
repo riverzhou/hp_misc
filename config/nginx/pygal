@@ -1,0 +1,19 @@
+server {
+        listen          80;
+        #server_name    $hostname;
+        access_log /river/srv/www/pygal/logs/access.log;
+        error_log  /river/srv/www/pygal/logs/error.log;
+
+        location /uwsgi {
+            uwsgi_pass      127.0.0.1:9000;
+            #uwsgi_pass     unix:///run/uwsgi/app/pygal/pygal.socket;
+            include         uwsgi_params;
+            uwsgi_param     UWSGI_SCHEME $scheme;
+            uwsgi_param     SERVER_SOFTWARE    nginx/$nginx_version;
+        }
+
+        location / {
+            root   /river/srv/www/pygal/html/;
+            index  index.html index.htm;
+        }
+}

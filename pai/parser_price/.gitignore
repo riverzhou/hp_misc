@@ -1,0 +1,11 @@
+*.swp
+*.pyo
+*.pyc
+*.log
+*.jpg
+*.png
+*.txt
+*.ttf
+*.res
+__pycache__
+core
